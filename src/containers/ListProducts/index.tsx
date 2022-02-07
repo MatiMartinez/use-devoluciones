@@ -6,10 +6,10 @@ import { IProduct } from 'context/Devoluciones/interface'
 import LoadingWrapper from 'hocs/LoadingWrapper'
 
 const ListProducts: FC = () => {
-  const { products, loading } = useProduct()
+  const { products, loading, error } = useProduct()
 
   return (
-    <LoadingWrapper loading={loading}>
+    <LoadingWrapper loading={loading} error={error}>
       <StyledContainer>
         {products.map((product: IProduct) => (
           <ProductWrapper
